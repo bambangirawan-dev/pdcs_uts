@@ -19,6 +19,7 @@ uts
 │   └── request.php            # CORS, baca body JSON, ?id=, validasi
 ├── database
 │   └── pdcs.sql               # 3 tabel + foreign key + data contoh
+├── screenshots                # hasil testing Thunder Client
 ├── config.php                 # koneksi MySQL + error HTTP 500
 ├── config.local.example.php   # contoh setting password lokal
 └── start-server.bat           # server PHP di localhost:8080
@@ -215,3 +216,41 @@ Response `201 Created`:
 2. Pilih method dan isi URL, misalnya `http://localhost:8080/uts/api/jurusan.php`.
 3. Untuk POST dan PUT: tab **Body** → **JSON**, isi data seperti contoh di atas.
 4. Klik **Send** dan cek status di kanan atas.
+
+## Hasil testing Thunder Client
+
+### Jurusan (UTS)
+
+**GET** `/uts/api/jurusan.php` → `200 OK`
+
+![GET jurusan](screenshots/get-jurusan.png)
+
+**GET** `/uts/api/jurusan.php?id=1` → `200 OK`
+
+![GET jurusan by id](screenshots/get-jurusan-id.png)
+
+**POST** `/uts/api/jurusan.php` → `201 Created`
+
+![POST jurusan](screenshots/post-jurusan.png)
+
+**DELETE** `/uts/api/jurusan.php?id=4` → `200 OK`
+
+![DELETE jurusan](screenshots/delete-jurusan.png)
+
+### Mahasiswa
+
+**GET** `/uts/api/mahasiswa.php` → `200 OK`
+
+![GET mahasiswa](screenshots/get-mhs.png)
+
+**POST** `/uts/api/mahasiswa.php` → `201 Created`
+
+![POST mahasiswa](screenshots/post-mhs.png)
+
+**PUT** `/uts/api/mahasiswa.php?id=6` → `200 OK`
+
+![PUT mahasiswa](screenshots/put-mhs.png)
+
+**DELETE** `/uts/api/mahasiswa.php?id=6` → `200 OK`
+
+![DELETE mahasiswa](screenshots/delete-mhs.png)
